@@ -1,0 +1,6 @@
+path: /Users/willrmckinnon/VS_Code/SARSandbox/SSDD_data/data
+train: images/train
+val: images/valid
+test: images/test
+names:
+  0: ship
