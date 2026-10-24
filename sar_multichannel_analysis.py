@@ -22,9 +22,21 @@ from get_city import get_closest_city
 
 
 
-
-
 def multichannel_data_analysis(items, total_sqkm = 100):
+
+
+    xmin = -5.690798188840799
+    ymin = 35.17138623212788
+    xmax = -2.6076774506808538
+    ymax = 37.07037914207646
+
+
+
+    y_perc = 0.4
+    x_perc = 0.1
+
+    x_cent = xmin+(x_perc*(xmax-xmin))
+    y_cent = ymin+(y_perc*(ymax-ymin))
 
 
     print(f'Total Tiles Collected {len(items)}\n')
@@ -38,8 +50,9 @@ def multichannel_data_analysis(items, total_sqkm = 100):
 
     # Geometry Analysis
     polygon = shape(tile.geometry)
-    centroid = polygon.centroid
-    lon, lat = centroid.x, centroid.y #Centerpoint
+    #centroid = polygon.centroid
+    #lon, lat = centroid.x, centroid.y #Centerpoint
+    lon, lat = x_cent, y_cent
     print(f'This scene is centered on {lat:.4f}, {lon:.4f}\n')
 
     # Find Nearest City

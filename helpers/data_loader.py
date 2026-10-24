@@ -29,7 +29,7 @@ class Sample:
     def show(self, figsize=(9, 7), show_info=False):
         """Display the image with ground-truth boxes and optional metadata."""
         fig, ax = plt.subplots(figsize=figsize)
-        ax.imshow(self.gray, cmap="gray", vmin=0, vmax=255)
+        ax.imshow(self.gray, cmap="cividis", vmin=0, vmax=255)
 
         for x1, y1, x2, y2 in self.boxes_xyxy:
             ax.add_patch(Rectangle(
